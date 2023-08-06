@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ProjectSDK</string>.
+    <string name="com_name">$$com_name$$</string>.
+</resources>

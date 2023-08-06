@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/delete_start">
+        <Constraint android:id="@+id/tvCancel" />
+        <Constraint android:id="@+id/tvConfirm" />
+        <Constraint android:id="@+id/guideline6"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/delete_confirm_end">
+        <Constraint android:id="@+id/tvCancel"
+            android:visibility="invisible" />
+        <Constraint android:id="@+id/tvConfirm" />
+        <Constraint android:id="@+id/guideline6"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="120pt"
+            android:layout_width="wrap_content" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/delete_cancel_end">
+        <Constraint android:id="@+id/tvCancel" />
+        <Constraint android:id="@+id/tvConfirm"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/tvCancel" />
+        <Constraint android:id="@+id/guideline6"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_end="120pt"
+            android:layout_width="wrap_content" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/delete_confirm_end"
+        app:constraintSetStart="@+id/delete_start">
+        <OnSwipe
+            app:dragDirection="dragRight"
+            app:touchAnchorSide="right" />
+    </Transition>
+
+    <Transition
+        app:constraintSetEnd="@id/delete_cancel_end"
+        app:constraintSetStart="@+id/delete_start">
+        <OnSwipe
+            app:dragDirection="dragLeft"
+            app:touchAnchorSide="left" />
+    </Transition>
+</MotionScene>
