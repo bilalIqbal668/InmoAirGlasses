@@ -2,6 +2,7 @@ package com.inmo.projectsdk.utils;
 
 import android.os.Build;
 
+
 import androidx.cardview.widget.CardView;
 
 import java.lang.reflect.Constructor;
@@ -10,7 +11,6 @@ import java.lang.reflect.Method;
 
 public class CardUtils {
     private static boolean inited=false;
-    //设置obj的成员变量
     private static void setMember(Object obj, String memberName, Object value) {
         try {
             if (obj instanceof Class) {

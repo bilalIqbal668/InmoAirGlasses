@@ -2,6 +2,7 @@ package com.inmo.projectsdk;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,16 +13,10 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.inmo.projectsdk.dialog.DialogActivity;
-import com.inmo.projectsdk.gesture.GestureActivity;
-import com.inmo.projectsdk.inmoring.InmoRingActivity;
+import com.inmo.projectsdk.audiorecorder.Audio;
 import com.inmo.projectsdk.recyclerview.MyAdapter;
 import com.inmo.projectsdk.recyclerview.MyItemDecoration;
-import com.inmo.projectsdk.recyclerview.RecyclerViewActivity;
-import com.inmo.projectsdk.seekbar.SeekbarActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,19 +27,21 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayoutManager layoutManager;
     private List<String> pages = new ArrayList<>();
     private View lastSelectView = null;
+    private CardView cardView;
     private int selectPosition = 0;
     private GestureDetector mDetector;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("InmoSDK Sample");
+        setTitle("Inmo recorder");
         initDetector();
-        pages.add("Gesture");
+        /*pages.add("Gesture");
         pages.add("Dialog");
         pages.add("Seekbar");
         pages.add("RecyclerView");
-        pages.add("InmoRing");
+        pages.add("InmoRing");*/
+        pages.add("Start recording");
 
         initRecyclerView();
 
@@ -84,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         switch (pos) {
+            /*
             case 0:
                 goToActivity(GestureActivity.class);
                 break;
@@ -100,6 +98,9 @@ public class MainActivity extends AppCompatActivity {
                 goToActivity(InmoRingActivity.class);
                 break;
             case 5:
+                break;*/
+            case 0:
+                goToActivity(Audio.class);
                 break;
             default:
                 break;
@@ -111,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, c);
         startActivity(intent);
     }
-
     private void initRecyclerView() {
         recyclerView = findViewById(R.id.recyclerview);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);

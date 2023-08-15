@@ -15,6 +15,32 @@
         android:layout_marginEnd="14px"
         android:overScrollMode="never"/>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14px"
+        android:layout_marginEnd="14px"
+        android:overScrollMode="never"
+        android:visibility="gone"
+        app:cardBackgroundColor="#4400ff00"
+        android:background="#4400ff00"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="20dp"
+        app:contentPadding="20dp"
+        app:cardElevation="20dp"
+        >
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Recording"
+            android:maxLines="3"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="28px">
+        </TextView>
+    </androidx.cardview.widget.CardView>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
