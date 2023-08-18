@@ -160,4 +160,6 @@ public class MainActivity extends AppCompatActivity {
     private void changeSelectedItemView(View view) {
         lastSelectView = view;
     }
+
+
 }
