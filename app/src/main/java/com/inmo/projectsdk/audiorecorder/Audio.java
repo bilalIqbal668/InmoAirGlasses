@@ -99,13 +99,13 @@ public class Audio extends AppCompatActivity {
     }
 
     private void okhttpRequest() {
-        String apiKey = "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";
+        String apiKey = "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";
         String model = "whisper-1";
 
         File audioFile = getRecordingFile();
 
         RequestBody modelBody = RequestBody.create(MediaType.parse("text/plain"), model);
-        RequestBody fileBody = RequestBody.create(MediaType.parse("audio/mp3"), audioFile); // Use "audio/mp3"
+        RequestBody fileBody = RequestBody.create(MediaType.parse("audio/mp3"), audioFile);
         MultipartBody.Part filePart = MultipartBody.Part.createFormData("file", audioFile.getName(), fileBody);
 
         Call<ResponseBody> call = apiService.uploadAudio("Bearer " + apiKey, modelBody, filePart);
