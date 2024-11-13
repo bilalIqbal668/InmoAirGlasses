@@ -54,7 +54,7 @@ Welcome to the **Inmo Air Glasses Real-Time Language Translator** project. This 
 
 1. Clone the repository:
     ```bash
-    git clone [https://github.com/bilalIqbal668/InmoAirGlasses.git](https://github.com/bilalIqbal668/InmoAirGlasses.git)
+    git clone https://github.com/bilalIqbal668/InmoAirGlasses.git
     ```
 2. Open the project in Android Studio.
 3. Build and run the project on an Android device with the **Inmo Air VR glasses** paired via Bluetooth.
